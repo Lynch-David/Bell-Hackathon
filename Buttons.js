@@ -1,3 +1,7 @@
+
+
+
+//Playing sound on click for audio cues
 const audio = new Audio(src="zapsplat_multimedia_button_click_004_68776.mp3");
 let buttons = document.querySelectorAll("button");
 console.log(buttons);
