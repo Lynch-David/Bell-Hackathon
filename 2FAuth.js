@@ -2,6 +2,11 @@
 const audio = new Audio(src="zapsplat_multimedia_button_click_004_68776.mp3");
 let buttons = document.querySelectorAll("div.btn-group button");
 let buttonClicked = 0;
+const patternNumber = 4;
+const dummyArrayLength = 16;
+let number = 0;
+let generatedPattern = [patternNumber];
+let dummyArray = [dummyArrayLength]
 let buttonClickId = [patternNumber];
 console.log(buttons);
 buttons.forEach(button => {
@@ -12,25 +17,26 @@ buttons.forEach(button => {
 function playSoundDisable(event){
     
     buttonClicked++;
-    if (buttonClicked === 4){
-        checkSolution(event.currentTarget);
-    }
+    checkSolution(event.currentTarget.id);
+    
     audio.play();
     if (buttonClicked < 4){
         event.currentTarget.disabled = true;
     }
 }
 
-function checkSolution(clickedButton)
+function checkSolution(clickedButtonId)
 {
     for (let i = 0; i < buttonClickId.length; i++)
     {
-        buttonClickId[i] = clickedButton
+        buttonClickId[i] = clickedButtonId
+        console.log(clickedButtonId)
+        console.log(buttonClickId)
     }
 
     for (let i = 0; i < nums.size; i++)
     {
-        
+
     }
     toggleErrorMessage();
 }
@@ -63,11 +69,7 @@ function toggleErrorMessage() {
     }
 }
 
-const patternNumber = 4;
-const dummyArrayLength = 16;
-let number = 0;
-let generatedPattern = [patternNumber];
-let dummyArray = [dummyArrayLength]
+
 
 
 const nums = new Set();
