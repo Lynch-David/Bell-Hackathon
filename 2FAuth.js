@@ -27,6 +27,7 @@ function checkSolution(){
 let resetButton = document.getElementById("resetButton");
 resetButton.addEventListener("click", resetButtons);
 function resetButtons(){
+    toggleErrorMessage();
     buttonClicked = 0;
     buttons.forEach(button => {
         if (button.disabled == true){
