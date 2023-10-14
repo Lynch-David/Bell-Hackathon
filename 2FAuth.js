@@ -55,10 +55,6 @@ function resetButtons(){
 }
 
 //toggles messages
-window.onload = function() {
-    window.setTimeout(fadeout, 4000); //4 second fade out
-}
-
 let text = document.getElementById("toggleText");
 function toggleErrorMessage() {
     if (text.style.display === "none") {
