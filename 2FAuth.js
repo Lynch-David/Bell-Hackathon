@@ -48,8 +48,8 @@ function checkSolution(buttonInputs){
     }
     else{
         window.location.replace("./HomePage.html");
-    }
 }
+
 
 //Reset buttons 
 let resetButton = document.getElementById("resetButton");
