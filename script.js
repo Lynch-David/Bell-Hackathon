@@ -15,8 +15,11 @@ function CheckPassword(event)
 {
     if(passwordBox.value != password || emailBox.value != email || usernameBox.value != username)
     {
-        alert("Incorrect information. Please review username, email and password.");
+        alert("Incorrect information. Please review username, email and password."); //make wrong field empty 
         event.preventDefault();   
+    }
+    else{
+        window.location.replace("./2factorauth.html");
     }
 }
 form.addEventListener("submit", CheckPassword);
