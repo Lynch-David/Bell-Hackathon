@@ -5,17 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
     <script src="script.js" defer></script>
-</head>
+</head> 
 
 <body>
+    <h1>LOGIN</h1>
     <div id="submissionDiv">
         <form method="post" id="submissionForm" action="2factorauth.html">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="email" id="email" placeholder="Email Address" required>
-            <input type="password" id="password"  placeholder="Password" required>
-            <button type="submit">Login</button>
+            <div id="flexbox">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <input type="password" id="password"  placeholder="Password" required>
+                <button type="submit" id="loginButton">Login</button>
+            </div>
         </form> 
     </div>
 
