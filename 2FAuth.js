@@ -2,6 +2,7 @@
 const audio = new Audio(src="zapsplat_multimedia_button_click_004_68776.mp3");
 let buttons = document.querySelectorAll("div.btn-group button");
 let buttonClicked = 0;
+let buttonClickId = [patternNumber];
 console.log(buttons);
 buttons.forEach(button => {
     button.addEventListener("click", playSoundDisable)
@@ -9,17 +10,28 @@ buttons.forEach(button => {
 ;
 
 function playSoundDisable(event){
+    
     buttonClicked++;
-    if (buttonClicked > 4){
-        checkSolution();
+    if (buttonClicked === 4){
+        checkSolution(event.currentTarget);
     }
     audio.play();
-    if (buttonClicked <= 4){
+    if (buttonClicked < 4){
         event.currentTarget.disabled = true;
     }
 }
 
-function checkSolution(){
+function checkSolution(clickedButton)
+{
+    for (let i = 0; i < buttonClickId.length; i++)
+    {
+        buttonClickId[i] = clickedButton
+    }
+
+    for (let i = 0; i < nums.size; i++)
+    {
+        
+    }
     toggleErrorMessage();
 }
 
@@ -58,19 +70,12 @@ let generatedPattern = [patternNumber];
 let dummyArray = [dummyArrayLength]
 
 
-for (let i = 0; i < dummyArray.length; i++)
+const nums = new Set();
+while (nums.size !== patternNumber) 
 {
-    dummyArray[i] = number++;
-    
-}
-dummyArray.sort(()=> Math.random() - 0.5);
-
-for (let i = 0; i < generatedPattern.length; i++)
-{
-    generatedPattern[i] = dummyArray[i];
+    nums.add(Math.floor(Math.random() * 16) + 1)
 }
 
-console.log(generatedPattern);
 
 
 //from https://dev.to/shantanu_jana/how-to-play-sound-on-button-click-in-javascript-3m48
