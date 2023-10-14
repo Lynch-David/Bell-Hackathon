@@ -6,10 +6,15 @@
         <title>Authenticating...</title>
         <link rel="stylesheet" href="style.css">
         <script defer src="buttonsound.js"></script>
-        <script src="./solutiongeneration.js"></script>
+        <script defer src="./solutiongeneration.js"></script>
+        <script defer src="2FAuth.js"></script>
     </head>
     <body>
-        <h3 id="2authHeader">We have sent you a pattern via email. Please enter the 4 button solution in order</h3>
+        <div class="twofactorauth">
+            <h3 id="2authHeader">We have sent you a pattern via email. Please enter the 4 button solution in order</h3>
+            <button id="resetButton">reset</button>
+            <p id="toggleText">Solution was incorrect. You have 2 tries remaining.</p>
+        </div>
         <div class="btn-group">
             <div id="row1">
                 <button id="1"></button>
