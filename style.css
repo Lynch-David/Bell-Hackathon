@@ -27,3 +27,11 @@ div.btn-group button {
 div.btn-group button:disabled{
   background-color: rebeccapurple;
 }
+
+#toggleText {
+  display: none;
+  opacity: 1;
+  transition: 1s opacity;
+  text-align: center;
+  font-size:32px;
+}
