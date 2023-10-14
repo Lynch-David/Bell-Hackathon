@@ -9,9 +9,12 @@ for (let i = 0; i < generatedPattern.length; i++)
 }
 
 ShellSort(generatedPattern)
-while (BinarySearch(generatedPattern[i]))
+for (let i=0; i < generatedPattern.length; i++)
 {
-    generatedPattern[i] = GenerateNumber; 
+    while (BinarySearch(generatedPattern[i], generatedPattern))
+    {
+        generatedPattern[i] = GenerateNumber; 
+    }
 }
 
 for (let i = 0; i < buttonGrid.children.length; i++)
@@ -26,6 +29,12 @@ for (let i = 0; i < buttonGrid.children.length; i++)
     }
 }
 
+for (let i = 0; i < generatedPattern.length; i++)
+{
+    console.log(generatedPattern[i]);
+}
+
+console.log(buttonStyle)
 
 function GenerateNumber()
 {
@@ -34,9 +43,10 @@ function GenerateNumber()
 
 function ShellSort(collection) 
 {
-    {
-        key, numShifts = 0;
-        for (let k = 1; k < collection.Length; k++)
+    
+        let key;
+        let numShifts = 0;
+        for (let k = 1; k < collection.length; k++)
         {
             key = collection[k];
             let i = k - 1;
@@ -49,34 +59,32 @@ function ShellSort(collection)
             collection[i + 1] = key;
         }
         
-    }
+    
 }
 
-function BinarySearch(key, collection)
+function BinarySearch(key, generatedPattern)
 {
         
-     left = 0, right = collection.Length - 1 , iterations = 0;
+    let left = 0; 
+    let right = (generatedPattern.length) - 1; 
 
-     while (left <= right)
-     {
+    while (left <= right)
+    {
         midPoint = left + ((right-left) / 2); 
 
-        if (collection[midPoint] == key)
+        if (generatedPattern[midPoint] == key)
         {
             return true
         }
-
-         if (key < collection[midPoint])
-         {
+        if (key < generatedPattern[midPoint])
+        {
             right = midPoint - 1;
-
-        
         }
         else 
         {
             left = midPoint + 1;
         }   
     }
-            return false;
- }
+    return false;
+}
     
