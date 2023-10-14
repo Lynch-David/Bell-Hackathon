@@ -9,25 +9,15 @@ for (let i = 0; i < generatedPattern.length; i++)
 }
 
 ShellSort(generatedPattern)
-for (let i=0; i < generatedPattern.length; i++)
+
+for (let i = 0; i < generatedPattern.length; i++)
 {
-    while (BinarySearch(generatedPattern[i], generatedPattern))
+    while (LinearSearch(generatedPattern[i], generatedPattern))
     {
         generatedPattern[i] = GenerateNumber; 
     }
 }
 
-for (let i = 0; i < buttonGrid.children.length; i++)
-{
-    for (let j = 0; i < buttonGrid.children[i].length; i++)
-    {
-        if (buttonGrid.children[i].children[j] == generatedPattern[j])
-        {
-            let buttonStyle = document.getElementById(buttonGrid.children[i].children[j].id)
-            buttonStyle.style.backgroundColor = "black";
-        }
-    }
-}
 
 for (let i = 0; i < generatedPattern.length; i++)
 {
@@ -44,47 +34,39 @@ function GenerateNumber()
 function ShellSort(collection) 
 {
     
-        let key;
-        let numShifts = 0;
-        for (let k = 1; k < collection.length; k++)
+    let numSwaps = 0
+    let temp;
+    for (let gap = collection.Length / 2; gap >= 1; gap = gap / 2)
+    {
+        for (let j = gap; j < collection.Length; j++)
         {
-            key = collection[k];
-            let i = k - 1;
-            while (i >= 0 && collection[i] > key)
+            for (let i = j - gap; i >= 0; i = i - gap)
             {
-                collection[i + 1] = collection[i];
-                i--;
-                numShifts++;
+                if (collection[i] > collection[i + gap])
+                {
+                    temp = collection[i];
+                    collection[i] = collection[i + gap];
+                    collection[i + gap] = temp;
+                    numSwaps++;
+                }
+                else
+                    break;
             }
-            collection[i + 1] = key;
         }
+    }
+    return numSwaps;
+} 
         
     
-}
-
-function BinarySearch(key, generatedPattern)
+function LinearSearch(key, collection)
 {
-        
-    let left = 0; 
-    let right = (generatedPattern.length) - 1; 
-
-    while (left <= right)
+    for (let i = 0; i < collection.length; i++)
     {
-        midPoint = left + ((right-left) / 2); 
-
-        if (generatedPattern[midPoint] == key)
+        if (collection[i] === key)
         {
-            return true
+            return true;
         }
-        if (key < generatedPattern[midPoint])
-        {
-            right = midPoint - 1;
-        }
-        else 
-        {
-            left = midPoint + 1;
-        }   
     }
     return false;
-}
+} 
     
