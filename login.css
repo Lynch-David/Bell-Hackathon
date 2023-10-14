@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+#submissionDiv{
+    background: grey;
+    width: 320px;
+    overflow: hidden;
+    margin: auto;
+    margin: 20 0 0 450px;   
+    padding: 80px;
+    border-radius: 15px ;
+}
+h1{
+    text-align: center;
+    padding: 20px;
+}
+#username{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+}
+#email{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+}
+#password{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+}
+#loginButton{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 17px;
+    padding-left: 7px;
+    color: blue;    
+}
+#flexbox{
+    display:flex;
+    gap: 10px;
+    justify-content: center;
+    flex-direction: column;
+}
+
