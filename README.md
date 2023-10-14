@@ -1,6 +1,7 @@
 # Bell-Hackathon
 Solution to the Bell Hackworks Hackathon 2023
 
+
 1. Create login page
 2. JS to check if email not case sensitive and Password case sensitive
 3. If it passes go to 2factorauth.html and send email
@@ -17,3 +18,7 @@ when it gets clicked it adds the number to either a string (use format string an
 Add a reset button that resets the variable and boxes back to default
 Add a submission button and it checks if the array/string===answe
 If it passes change html to Homepage
+
+Our solution aims to tackle common problems with the current 6 digit 2FA. Remembering 6 digits can be difficult to memorize and 3 attempts can be too little for some. Aims to make it more fun as we move towards using MFA in our daily web browsing. 
+
+We instead have a 4x4 button grid where the user will be sent the solution via email. They need to note the order and the position of 4 buttons. 
