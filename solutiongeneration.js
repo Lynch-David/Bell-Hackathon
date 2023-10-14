@@ -1,14 +1,28 @@
-"use strict";
+
 const patternNumber = 4;
-let generatedPattern = [patternNumber]
+let generatedPattern = [patternNumber];
+let buttonGrid = document.getElementById("btn-group")
 
 for (let i = 0; i < generatedPattern.length; i++)
 {
     generatedPattern[i] = GenerateNumber;
+}
 
-    while (BinarySearch(generatedPattern[i]))
+ShellSort(generatedPattern)
+while (BinarySearch(generatedPattern[i]))
+{
+    generatedPattern[i] = GenerateNumber; 
+}
+
+for (let i = 0; i < buttonGrid.children.length; i++)
+{
+    for (let j = 0; i < buttonGrid.children[i].length; i++)
     {
-        generatedPattern[i] = GenerateNumber;
+        if (buttonGrid.children[i].children[j] == generatedPattern[j])
+        {
+            let buttonStyle = document.getElementById(buttonGrid.children[i].children[j].id)
+            buttonStyle.style.backgroundColor = "black";
+        }
     }
 }
 
