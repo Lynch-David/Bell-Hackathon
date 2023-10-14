@@ -1,22 +1,19 @@
-.popup {
-  position: relative;
-  display: block;
-  cursor: pointer;
+div.btn-group{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
 }
 
-/* The actual popup (appears on top) */
-.popupPage {
-  visibility: hidden;
-  width: 800px;
-  background-color: #555;
-  color: #fff;
+div.btn-group button {
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 30px;
   text-align: center;
-  border-radius: 6px;
-  position: relative;
-  z-index: 1;
-  justify-content: center;
-}
-
-.popupPage .show {
-  visibility: visible;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  background-position: right center;
 }
