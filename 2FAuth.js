@@ -20,8 +20,8 @@ buttons.forEach(button => {
     button.addEventListener("click", buttonClick)
 });
 
-console.log(nums);
-console.log(buttonInputs);
+// console.log(nums);
+// console.log(buttonInputs);
 
 function buttonClick(event){
     buttonClicked++;
