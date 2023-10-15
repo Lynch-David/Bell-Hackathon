@@ -14,8 +14,6 @@ while (nums.size != patternNumber) {
     nums.add(Math.floor(Math.random() * 16) + 1);
 }
 
-let answer = document.getElementById("answerPage");
-
 //initialize a constant and new Set to evaluate later on
 const areSetsEqual = (a, b) => a.size === b.size && [...a].every(value => b.has(value));
 let buttonInputs = new Set();
@@ -24,16 +22,13 @@ buttons.forEach(button => {
     button.addEventListener("click", buttonClick)
 });
 
-console.log(nums); //TO DO remove me
-console.log(buttonInputs);
-s
+console.log(nums);
+
 function buttonClick(event) {
     buttonClicked++;//increase count of the amount of buttons we clicked
     audio.play(); //audio plays on click
     event.currentTarget.disabled = true; //sets the current box to disabled so that we cant click the same one aain
     buttonInputs.add(Number(event.currentTarget.id)); //Adds a number type variable to set
-
-    console.log(buttonInputs);
 
     if (buttonClicked === 4) { //after 4 button clicks check for the solution
         setTimeout(function () {
@@ -50,7 +45,6 @@ function checkSolution(buttonInputs) {
     })
     buttonInputs = Array.from(buttonInputs);
     nums = Array.from(nums);
-    localStorage.setItem(nums);
     if (buttonInputs[0] != nums[0] || buttonInputs[1] != nums[1] || buttonInputs[2] != nums[2] || buttonInputs[3] != nums[3]) { //evaluates if the sets are equals to each other
         reset();
     }
@@ -100,7 +94,6 @@ function failedLogin() {
         buttons.forEach(button => { //set all buttons to disabled
             button.disabled = false;
         });
-        console.log(nums);
     }, 10000);
 }
 
