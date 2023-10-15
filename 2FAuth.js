@@ -52,7 +52,7 @@ function checkSolution(buttonInputs){
         reset();
     }
     else{
-        window.location.replace("./lab3-starter/index.html");//if they are equal than congrats you can go to the homepage  RAYAN CHANGED THE REDIrECT IF IT BREAKS
+        window.location.replace("HomePage.html");//if they are equal than congrats you can go to the homepage 
     }
 }
 

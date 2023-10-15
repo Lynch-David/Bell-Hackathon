@@ -4,11 +4,11 @@ html, body{
 }
 #submissionDiv{
     background-image: linear-gradient( purple, #720e9e, indigo);
-    width: 320px;
-    height: 200px;
-    overflow: hidden;
-    margin: auto;
-    margin: 20 0 0 450px;   
+    width: 320px; 
+    height: 200px; 
+    overflow: hidden; 
+    margin: auto; 
+    margin: 20 0 0 450px; 
     padding: 80px;
     border-radius: 15px ;
 }
