@@ -98,8 +98,5 @@ function failedLogin() {
 }
 
 document.addEventListener("DOMContentLoaded", openTab());
-function openTab() {
-    window.open("./Solution.html", "_blank");
-}
 
 //Audio playing from https://dev.to/shantanu_jana/how-to-play-sound-on-button-click-in-javascript-3m48
