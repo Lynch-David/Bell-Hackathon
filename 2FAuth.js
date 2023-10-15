@@ -1,22 +1,23 @@
 //Playing sound on click for audio cues
 const audio = new Audio(src="zapsplat_multimedia_button_click_004_68776.mp3");
 
-let buttons = document.querySelectorAll("div.btn-group button");
+let buttons = document.querySelectorAll("div.btn-group button");//selects all buttons
+//initialize counts
 let buttonClicked = 0;
 let tryCount = 3;
 
 const patternNumber = 4;
 
-
+//create a Set which is a collection of 4 unique numbers
 let nums = new Set();
 while (nums.size != patternNumber) 
 {
     nums.add(Math.floor(Math.random() * 16) + 1);
 }
-
+//initialize a constant and new Set to evaluate later on
 const areSetsEqual = (a, b) => a.size === b.size && [...a].every(value => b.has(value));
-let buttonInputs =new Set();
-
+let buttonInputs = new Set();
+//On each button click run buttonClick function
 buttons.forEach(button => {
     button.addEventListener("click", buttonClick)
 });
@@ -25,61 +26,63 @@ console.log(nums);
 console.log(buttonInputs);
 
 function buttonClick(event){
-    buttonClicked++;
+    buttonClicked++;//increase count of the amount of buttons we clicked
     audio.play();
-    event.currentTarget.disabled = true;
-    buttonInputs.add(Number(event.currentTarget.id));
+    event.currentTarget.disabled = true; //sets the current box to disabled so that we cant click the same one aain
+    buttonInputs.add(Number(event.currentTarget.id)); //Adds a number type variable to set
 
     console.log(buttonInputs);
 
-    if(buttonClicked === 4){
+    if(buttonClicked === 4){ //after 4 button clicks check for the solution
         checkSolution(buttonInputs);
     }
 }
 
 function checkSolution(buttonInputs){
-    buttons.forEach(button => {
+    buttons.forEach(button => { //reenable all the boxes
         if (button.disabled == true){
             button.disabled = false;
         }
     })
-    if(!areSetsEqual(buttonInputs,nums)){
+    if(!areSetsEqual(buttonInputs,nums)){ //evaluates if the sets are equals to each other
         reset();
     }
     else{
-        window.location.replace("./HomePage.html");
+        window.location.replace("./HomePage.html");//if they are equal than congrats you can go to the homepage
     }
 }
 
 //Reset buttons 
 let resetButton = document.getElementById("resetButton");
 resetButton.addEventListener("click", reset);
-let showText = document.getElementById("centering")
+let showText = document.getElementById("centering")//text for amount of tries we have left
 
 function reset(){
-    tryCount-= 1;
-    buttons.forEach(button => {
+    tryCount-= 1; //amount of tries -1 because we just failed
+    buttons.forEach(button => { //again set all the buttons to enabled
         if (button.disabled == true){
             button.disabled = false;
         }
     })
-    buttonClicked = 0;
+    //reset the Set and amount of button clicks
+    buttonClicked = 0; 
     buttonInputs = new Set();
-    showText.style.visibility = "visible"
+    showText.style.visibility = "visible" //shows the text that says how many tries we have left
     showText.innerText="Solution was incorrect. You have " +tryCount+ " tries remaining."
     if(tryCount === 0)
     {
         showText.style.visibility = "hidden"
-        failedLogin();
+        failedLogin(); //call function to restart the 2FA with new values and solution because they failed their 3 attemps
     }
 }
 function failedLogin(){
-    nums = new Set();
+    //Makes a new solution to the 2FA
+    nums = new Set(); 
     while (nums.size != patternNumber) 
     {
         nums.add(Math.floor(Math.random() * 16) + 1);
     }
-    tryCount = 3;
+    tryCount = 3; //resets to default options
     console.log(nums);
 }
 //from https://dev.to/shantanu_jana/how-to-play-sound-on-button-click-in-javascript-3m48
