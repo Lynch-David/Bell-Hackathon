@@ -9,13 +9,10 @@ let passwordBox = document.getElementById("password");
 let form = document.getElementById("submissionForm");
 function CheckPassword(event)
 {
-    if(passwordBox.value != password || emailBox.value != email || usernameBox.value != username)
+    if(passwordBox.value != password || emailBox.value != email || usernameBox.value != username)//if any of them are incorrect
     {
         alert("Incorrect information. Please review username, email and password."); //make wrong field empty 
-        event.preventDefault();   
-    }
-    else{
-        window.location.replace("./2factorauth.html");
+        event.preventDefault();   //prevent form submission
     }
 }
 form.addEventListener("submit", CheckPassword);
