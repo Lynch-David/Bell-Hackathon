@@ -44,7 +44,9 @@ function checkSolution(buttonInputs){
             button.disabled = false;
         }
     })
-    if(!areSetsEqual(buttonInputs,nums)){ //evaluates if the sets are equals to each other
+    buttonInputs = Array.from(buttonInputs);
+    nums = Array.from(nums);
+    if(buttonInputs[0] != nums[0] || buttonInputs[1] != nums[1] || buttonInputs[2] != nums[2] || buttonInputs[3] != nums[3]){ //evaluates if the sets are equals to each other
         reset();
     }
     else{
@@ -77,13 +79,16 @@ function reset(){
 }
 function failedLogin(){
     //Makes a new solution to the 2FA
-    nums = new Set(); 
-    while (nums.size != patternNumber) 
-    {
-        nums.add(Math.floor(Math.random() * 16) + 1);
-    }
-    tryCount = 3; //resets to default options
-    console.log(nums);
+    alert("Sorry, you used up your 3 tries. Please wait 10 seconds and we'll send you a new solution.")
+    setTimeout(function(){
+        nums = new Set(); 
+        while (nums.size != patternNumber) 
+        {
+            nums.add(Math.floor(Math.random() * 16) + 1);
+        }
+        tryCount = 3; //resets to default options
+        console.log(nums);
+    }, 10);
 }
 
 document.addEventListener("DOMContentLoaded", openTab());
