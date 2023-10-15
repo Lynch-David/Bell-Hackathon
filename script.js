@@ -1,8 +1,4 @@
 "use strict";
-function addPopupPage(){
-    let popuptext = document.getElementById("login");
-    popuptext.classList.toggle("show");
-}
 
 let username = "Horizon";
 let email = "davydav1919@gmail.com";
