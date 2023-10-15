@@ -56,11 +56,9 @@ function checkSolution(buttonInputs){
 
 //Reset buttons 
 let resetButton = document.getElementById("resetButton");
-resetButton.addEventListener("click", reset);
+resetButton.addEventListener("click", resetGrid);
 let showText = document.getElementById("centering")//text for amount of tries we have left
-
-function reset(){
-    tryCount-= 1; //amount of tries -1 because we just failed
+function resetGrid(){
     buttons.forEach(button => { //again set all the buttons to enabled
         if (button.disabled == true){
             button.disabled = false;
@@ -69,6 +67,10 @@ function reset(){
     //reset the Set and amount of button clicks
     buttonClicked = 0; 
     buttonInputs = new Set();
+}
+function reset(){
+    tryCount-= 1; //amount of tries -1 because we just failed
+    resetGrid();
     showText.style.visibility = "visible" //shows the text that says how many tries we have left
     showText.innerText="Solution was incorrect. You have " +tryCount+ " tries remaining."
     if(tryCount === 0)
@@ -80,14 +82,22 @@ function reset(){
 function failedLogin(){
     //Makes a new solution to the 2FA
     alert("Sorry, you used up your 3 tries. Please wait 10 seconds and we'll send you a new solution.")
+    buttons.forEach(button => { //set all buttons to disabled
+        button.disabled = true;
+        });
+        resetButton.disabled = true;
     setTimeout(function(){
+        resetButton.disabled = false;
         nums = new Set(); 
         while (nums.size != patternNumber) 
         {
             nums.add(Math.floor(Math.random() * 16) + 1);
         }
         tryCount = 3; //resets to default options
+        buttons.forEach(button => { //set all buttons to disabled
+            button.disabled = false;
+            });
         console.log(nums);
-    }, 10);
+    }, 10000);
 }
 //from https://dev.to/shantanu_jana/how-to-play-sound-on-button-click-in-javascript-3m48

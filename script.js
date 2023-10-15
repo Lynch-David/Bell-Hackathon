@@ -2,7 +2,7 @@
 
 let username = "Horizon";
 let email = "davydav1919@gmail.com";
-let password = "W3lc0me@Bell-Hackathon";
+let password = "1234";
 let usernameBox = document.getElementById("username");
 let emailBox = document.getElementById("email");
 let passwordBox = document.getElementById("password");
