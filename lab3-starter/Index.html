@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="eng">
+        <head>
+            <meta charset="UTF-8">
+            <title>Lab 3</title>
+            <link id="change" rel="stylesheet" href="style.css">
+        </head>
+    <body>
+        <div class="top">
+            <h1>Logo</h1>
+            <div class="top-list">
+                <ul>
+                    <li>Item first</li>
+                    <li>Item two</li>
+                    <li>Item three</li>
+                    <li>Item four</li>
+                    <li>Item five</li>
+                </ul>
+            </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><img src="images\menu.svg" alt="button.svg"></button>
+                    <div class="dropdown-content">
+                        <button onclick="changestylesheet('style.css')">Switch to style.css</button>
+                        <button onclick="changestylesheet('layouts.css')">Switch to layouts.css</button>
+                    </div>
+                </div>
+        </div>
+        <div class="front">
+            <div class="front-text">
+                <div class="sub-header1">
+                    <h1>We help you find the best animals</h1>
+                </div>
+                <div class="paragraph1">
+                    <p>We will make sure we find the right cat for you! Our mission is to show the beauty of adopting a cat and the benefits it can lead to. Although it isn't for everyone we can safely say almost all cat owners are very happy with the cat they adpot and our service tries to find that perfect match for you.</p>
+                </div>
+                <button id="learn-more">Learn More</button>
+            </div>
+            <div class="front-image">
+                <img src="images/birdseyeview.jpg" alt="Meo looking down from his tower" width="400" height="400">
+            </div>
+        </div>
+            <div class="animal-guarantee">
+                <h2>The Animal Guarantee</h2>
+            </div>
+        <div class="info">
+            <div class="animal-stores">
+                <img src="images/shopping-cart.svg">
+                <h3>Animal Stores</h3>
+                <p>Animal stores are very common so people can provide for their pets without travelling far.</p>
+            </div>
+            <div class="animal-security">
+                <img src="images/shield.svg">
+                <h3>Animal Security</h3>
+                <p>It's always a good idea to get some sort of easily trackable device for your pet in case the door is left open or if they are an outside pet.</p>
+            </div>
+            <div class="animal-categorization">
+                <img src="images/tag.svg">
+                <h3>Animal Categorization</h3>
+                <p>Animals all have their own "subcategories" which is just the different breeds of whichever animal you refer to.</p>
+            </div>
+            <div class="animal-communication">
+                <img src="images/send.svg">
+                <h3>Animal Communication</h3>
+                <p>Animals all communicate in different ways. For example cats only meow as a communication method to humans.</p>
+            </div>
+            <div class="animal-networks">
+                <img src="images/share-2.svg">
+                <h3>Animal Networks</h3>
+                <p>Animals mostly have their own networks. It is essentially their family/group not every species or animal has a group or family they follow. </p>
+            </div>
+            <div class="animal-storage">
+                <img src="images/database.svg">
+                <h3>Animal Storage</h3>
+                <p>Animals that are to be pets are "stored" in shelters. They are kept in cages depending on their size and are fed and played with by the workers.</p>
+            </div>
+        </div>
+        <div class="info-with-img">
+            <div class="animal-info">
+                <h2>We offer a comprehensive range of animals</h2>
+            </div>
+        <div class="img-txt">
+            <div class="charlie">
+                <img src="images/charliewhat.jpg" alt="Charlie with a surprised looking expression" width="300" height="300">
+                <h3>Charlie</h3>
+                <p>Charlie was a big monster especially when he would run around. You could hear him running from anywhere in the house. he loved eating and spending time with everyone.</p>
+            </div>
+            <div class="mayo">
+                <img src="images/standing mayo.jpg" alt="Meo standing on his back legs" width="300" height="300">
+                <h3>Meo</h3>
+                <p>Meo is a small cow. Hes black and white and eats loads of food. He still likes playing but he's less extroverted than his brother.</p>
+            </div>
+            <div class="tayo">
+                <img src="images/walkling Tayo.jpg" alt="Theo near some of his favourite toys" width="300" height="300">
+                <h3>Theo</h3>
+                <p>Theo is a little rebellious kitten. He likes attacking people's hair and trying to eat it. He is very active.</p>
+            </div>
+            <div class="mayo-tayo">
+                <img src="images/sleepycats.jpg" alt="Meo and Theo falling asleep together in their hammock" width="300" height="300">
+                <h3>Meo and Theo</h3>
+                <p>Meo and Theo are 2 brother and are currently 8 months old. They love playing together and keep eachother company as well as us.</p>
+            </div>
+        </div>
+
+
+        </div>
+        <div class="final-words">
+            <div class="ready-to-end">
+                <h2>Ready to get started?</h2>
+            </div>
+            <div class="last">
+                <p>Ready to take your first step into adopting a cat? Well we hope to find you when you do decide to make the decision and we will help you through the entire process.</p>
+                <button id="get-started">Get Started</button>
+            </div>
+        </div>
+        <footer>
+            <p>© BrandName. All rights reserved.</p>
+        </footer>
+        <script>
+            function changestylesheet(sheet) {  
+            document.getElementById('change').setAttribute('href', sheet)
+}
+        </script>
+    </body>
+</html>

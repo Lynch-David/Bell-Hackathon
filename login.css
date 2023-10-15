@@ -1,12 +1,11 @@
-body{
-    margin: 0;
-    padding: 0;
-    background-color: white;
+html, body{
+    height: 100%;
     font-family: 'Times New Roman', Times, serif;
 }
 #submissionDiv{
-    background: grey;
+    background-image: linear-gradient( purple, #720e9e, indigo);
     width: 320px;
+    height: 200px;
     overflow: hidden;
     margin: auto;
     margin: 20 0 0 450px;   
@@ -30,7 +29,7 @@ h1{
     border: none;
     border-radius: 17px;
     padding-left: 7px;
-    color: blue;    
+    color: black;    
 }
 #flexbox{
     display:flex;
