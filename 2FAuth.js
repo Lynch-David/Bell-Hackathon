@@ -34,7 +34,9 @@ function buttonClick(event){
     console.log(buttonInputs);
 
     if(buttonClicked === 4){ //after 4 button clicks check for the solution
-        checkSolution(buttonInputs);
+        setTimeout(function(){
+            checkSolution(buttonInputs);
+        }, 250);
     }
 }
 
