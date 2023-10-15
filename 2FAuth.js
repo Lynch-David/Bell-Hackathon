@@ -1,4 +1,4 @@
-//Playing sound on click for audio cues
+//Declaring sound
 const audio = new Audio(src="zapsplat_multimedia_button_click_004_68776.mp3");
 
 let buttons = document.querySelectorAll("div.btn-group button");//selects all buttons
@@ -22,12 +22,12 @@ buttons.forEach(button => {
     button.addEventListener("click", buttonClick)
 });
 
-console.log(nums);
+console.log(nums); //TO DO remove me
 console.log(buttonInputs);
 
 function buttonClick(event){
     buttonClicked++;//increase count of the amount of buttons we clicked
-    audio.play();
+    audio.play(); //audio plays on click
     event.currentTarget.disabled = true; //sets the current box to disabled so that we cant click the same one aain
     buttonInputs.add(Number(event.currentTarget.id)); //Adds a number type variable to set
 
@@ -85,4 +85,10 @@ function failedLogin(){
     tryCount = 3; //resets to default options
     console.log(nums);
 }
-//from https://dev.to/shantanu_jana/how-to-play-sound-on-button-click-in-javascript-3m48
+
+document.addEventListener("DOMContentLoaded", openTab());
+function openTab() {
+    window.open("./Solution.html", "_blank");
+}
+
+//Audio playing from https://dev.to/shantanu_jana/how-to-play-sound-on-button-click-in-javascript-3m48
