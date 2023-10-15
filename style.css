@@ -1,7 +1,10 @@
-div.twofactorauth {
+div.twofactorauth, #centering{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+#centering{
+  visibility: hidden;
 }
 
 div.btn-group{
